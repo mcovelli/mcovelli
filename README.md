@@ -1,8 +1,8 @@
 # Hi, I'm Mike 👋
 
-**CS & Business Administration Graduate** · Aspiring Data & Business Analyst
+**C&IS & Business Administration Graduate** · Aspiring Data & Business Analyst
 
-I build data-driven projects that turn raw datasets into actionable insights. I'm passionate about uncovering trends, building dashboards, and solving real-world problems with data.
+I work on data projects that turn complex datasets into clear, practical answers. I like tracking down trends, building straightforward dashboards and using data to solve actual problems.
 
 ---
 

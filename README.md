@@ -1,6 +1,6 @@
 # Hi, I'm Mike 👋
 
-**C&IS & Business Administration Graduate** · Aspiring Data & Business Analyst
+**B.S. in Computer and Information Science & Bachelor of Business Administration** · Entry-Level Data & Business Analyst
 
 I work on data projects that turn complex datasets into clear, practical answers. I like tracking down trends, building straightforward dashboards and using data to solve actual problems.
 

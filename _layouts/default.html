@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WR67PSJG2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1WR67PSJG2', {'debug_mode': true});
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          var url = link.getAttribute('href');
+          if (!url) return;
+    
+          // 1. Resume download
+          if (link.hasAttribute('download') || url.match(/\.pdf$/i)) {
+            gtag('event', 'resume_download', {
+              link_url: url,
+              transport: 'beacon'
+            });
+    
+          // 2. GitHub repo / project click
+          } else {
+            var repoMatch = url.match(/github\.com\/mcovelli\/([^\/\s?#]+)/i);
+            if (repoMatch && repoMatch[1]) {
+              gtag('event', 'project_click', {
+                project_name: repoMatch[1],
+                link_url: url,
+                transport: 'beacon'
+              });
+    
+            // 3. LinkedIn profile
+            } else if (url.match(/linkedin\.com/i)) {
+              gtag('event', 'social_click', {
+                platform: 'LinkedIn',
+                link_url: url,
+                transport: 'beacon'
+              });
+    
+            // 4. GitHub profile badge (not a repo link)
+            } else if (url.match(/github\.com\/mcovelli\s*$/i)) {
+              gtag('event', 'social_click', {
+                platform: 'GitHub',
+                link_url: url,
+                transport: 'beacon'
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <main class="portfolio-container">
+    {{ content }}
+  </main>
+
+</body>
+</html>

@@ -28,7 +28,7 @@ I work on data projects that turn complex datasets into clear, practical answers
 
 | Project | Description | Tech |
 |---------|-------------|------|
-| [NYC Transit & Weather](https://github.com/mcovelli/nyc_transit_weather) | Data pipeline using live data from the National Weather Service (NWS) and the Metropolitan Transit Authority (MTA) to analyze how weather affects MTA subway service. | Python · Prefect · Requests · GTFS-Realtime |
+| [NYC Transit & Weather](https://github.com/mcovelli/nyc_transit_weather_pipeline) | Data pipeline using live data from the National Weather Service (NWS) and the Metropolitan Transit Authority (MTA) to analyze how weather affects MTA subway service. | Python · Prefect · Requests · GTFS-Realtime |
 | [NYC Crime Complaints](https://github.com/mcovelli/nyc_crime_complaints) | Analysis of 9.4M NYC crime complaints (2006–2024) with an interactive Streamlit dashboard and AI-generated narrative | Python · Pandas · Matplotlib · Streamlit · Ollama |
 | [Super Store Sales Analysis](https://github.com/mcovelli/SuperStoreSalesAnalysis) | Retail performance analysis of 10K+ transactions across US stores with Tableau dashboards and SQL data cleaning | SQL · MariaDB · Tableau |
 | [Northport University System](https://github.com/mcovelli/SystemsProject) | Full-stack university management system with role-based access for students, faculty, and admins | PHP · MySQL · HTML · CSS · JavaScript |

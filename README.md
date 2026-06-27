@@ -4,7 +4,7 @@
 
 I work on data projects that turn complex datasets into clear, practical answers. I like tracking down trends, building straightforward dashboards and using data to solve actual problems.  
   
-<a href="./assets/docs/michael_covelli_resume_v1.pdf" download class="resume-button">📄 Download Resume</a>
+<a href="./assets/docs/michael_covelli_resume.pdf" download class="resume-button">📄 Download Resume</a>
 
 ---
 

@@ -31,7 +31,7 @@ I work on data projects that turn complex datasets into clear, practical answers
 | [NYC Transit & Weather](https://github.com/mcovelli/nyc_transit_weather) | Data pipeline using live data from the National Weather Service (NWS) and the Metropolitan Transit Authority (MTA) to analyze how weather affects MTA subway service. | Python · Prefect · Requests · GTFS-Realtime |
 | [NYC Crime Complaints](https://github.com/mcovelli/nyc_crime_complaints) | Analysis of 9.4M NYC crime complaints (2006–2024) with an interactive Streamlit dashboard and AI-generated narrative | Python · Pandas · Matplotlib · Streamlit · Ollama |
 | [Super Store Sales Analysis](https://github.com/mcovelli/SuperStoreSalesAnalysis) | Retail performance analysis of 10K+ transactions across US stores with Tableau dashboards and SQL data cleaning | SQL · MariaDB · Tableau |
-| [Northport University System](https://github.com/mcovelli/SystemsProject) | Full-stack university management system with role-based access for students, faculty, and admins | PHP · MySQL · HTML · CSS · JavaScript |
+| [Northport University System](https://github.com/mcovelli/UniversityPortal) | Full-stack university management system with role-based access for students, faculty, and admins | PHP · MySQL · HTML · CSS · JavaScript |
 | [PyForge](https://github.com/mcovelli/pyforge) | Interactive Python learning tool built with React | React · JavaScript · Vite |
 | [Scanfiler](https://github.com/mcovelli/scanfiler) | Automated document filing powered by local AI. No data ever leaves your machine | Python · Ollama · Tesseract · MCP Server · Pillow |
 | [JobBoard](https://github.com/mcovelli/JobBoard) | Job Board tailored to entry level Data & Business Analyst roles | React · JavaScript · Vite · SerpApi · Gemini |

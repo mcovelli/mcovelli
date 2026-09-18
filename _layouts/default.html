@@ -24,21 +24,36 @@
       var hasInteracted = false;
       var noInteractionSent = false;
 
-      // Decide whether a click also deserves a more specific, named event
-      // on top of the catch-all link_click below (nicer GA4 reports).
+      // Turns link text/urls into a short, GA4-safe event-name suffix
+      // (letters/numbers/underscores, starts with a letter, capped length).
+      function slugify(str, maxLen) {
+        var s = (str || '')
+          .replace(/([a-z0-9])([A-Z])/g, '$1_$2')
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '_')
+          .replace(/^_+|_+$/g, '')
+          .slice(0, maxLen || 28);
+        return s || 'link';
+      }
+
+      // Gives each known link its own event name, so GA4's default Events
+      // report breaks clicks down link-by-link with zero extra setup.
       function classifyLink(link, url) {
         if (link.hasAttribute('download') || /\.pdf$/i.test(url)) {
           return { event: 'resume_download', params: {} };
         }
         var repoMatch = url.match(/github\.com\/mcovelli\/([^\/\s?#]+)/i);
         if (repoMatch && repoMatch[1]) {
-          return { event: 'project_click', params: { project_name: repoMatch[1] } };
+          return {
+            event: 'project_click_' + slugify(repoMatch[1], 26),
+            params: { project_name: repoMatch[1] }
+          };
         }
         if (/linkedin\.com/i.test(url)) {
-          return { event: 'social_click', params: { platform: 'LinkedIn' } };
+          return { event: 'social_click_linkedin', params: { platform: 'LinkedIn' } };
         }
         if (/github\.com\/mcovelli\/?\s*$/i.test(url)) {
-          return { event: 'social_click', params: { platform: 'GitHub' } };
+          return { event: 'social_click_github', params: { platform: 'GitHub' } };
         }
         return null;
       }
@@ -59,20 +74,22 @@
 
           link.addEventListener('click', function () {
             hasInteracted = true;
-            var linkText = (link.textContent || link.getAttribute('aria-label') || '').trim().slice(0, 100);
-
-            // Every single link click is tracked here, categorized or not.
-            gtag('event', 'link_click', {
-              link_url: url,
-              link_text: linkText,
-              transport: 'beacon'
-            });
+            var linkText = (link.textContent || link.getAttribute('aria-label') || '')
+              .trim().replace(/\s+/g, ' ').slice(0, 100);
 
             var specific = classifyLink(link, url);
-            if (specific) {
-              var params = Object.assign({ link_url: url, transport: 'beacon' }, specific.params);
-              gtag('event', specific.event, params);
-            }
+            var namedEvent = specific ? specific.event : 'link_click_' + slugify(linkText || url, 28);
+            var params = Object.assign(
+              { link_url: url, link_text: linkText, transport: 'beacon' },
+              specific ? specific.params : {}
+            );
+
+            // Per-link event, e.g. project_click_nyc_transit_weather — shows
+            // up as its own row in GA4's Events report, no config needed.
+            gtag('event', namedEvent, params);
+
+            // Stable catch-all so totals still work even as links change.
+            gtag('event', 'link_click', { link_url: url, link_text: linkText, transport: 'beacon' });
           });
         });
       }

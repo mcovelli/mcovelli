@@ -1,25 +1,23 @@
-# Hi, I'm Mike 👋
+# Michael Covelli  
 
-**B.S. in Computer and Information Science & Bachelor of Business Administration** · Entry-Level SQL Developer, Data & Business Analyst
-
-I work on data projects that turn complex datasets into clear, practical answers. I like tracking down trends, building straightforward dashboards and using data to solve actual problems.  
+Computer Science **and** Business Management graduate with hands-on experience building relational databases, tuning SQL queries, and designing reliable data pipelines. Spent time working directly with schemas, stored procedures, and triggers, along with python scripting to transform messy raw data into clear reporting systems. Good at talking through requirements with non-technical teams, spotting bottlenecks in database performance, and building clean visual tools that make complex numbers easy to understand and use.
   
-<a href="./assets/docs/michael_covelli_resume.pdf" download class="resume-button">📄 Download Resume</a>
+<a href="./assets/docs/mcovelli_resume.pdf" download class="resume-button">📄 Download Resume</a>
 
 ---
 
 ### 🛠️ Skills & Tools
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat&logo=mariadb&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white)
 ![Excel](https://img.shields.io/badge/Excel-217346?style=flat&logo=microsoftexcel&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat&logo=mariadb&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
 
 ---
@@ -48,5 +46,6 @@ I work on data projects that turn complex datasets into clear, practical answers
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/mcovelli)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/mcovelli)  
+[![Email](https://img.shields.io/badge/Email-18717?style=flat&Color=Blue)](mailto:michaelrcovelli@gmail.com)  
 
 ![](https://komarev.com/ghpvc/?username=mcovelli&color=lightgrey&style=flat&base=100)

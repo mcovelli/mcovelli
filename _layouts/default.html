@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <meta name="description" content="Portfolio of Michael Covelli — entry-level data & business analyst. SQL, Python, and data visualization projects.">
+  <meta name="description" content="Portfolio of Michael Covelli — SQL Developer, Data & Business Analyst. Database, pipeline, and data visualization projects.">
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="Portfolio of Michael Covelli — entry-level data & business analyst. SQL, Python, and data visualization projects.">
+  <meta property="og:description" content="Portfolio of Michael Covelli — SQL Developer, Data & Business Analyst. Database, pipeline, and data visualization projects.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
   <meta property="og:image" content="https://github.com/mcovelli.png">
   <link rel="icon" href="https://github.com/mcovelli.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WR67PSJG2"></script>
@@ -54,6 +56,9 @@
         }
         if (/github\.com\/mcovelli\/?\s*$/i.test(url)) {
           return { event: 'social_click_github', params: { platform: 'GitHub' } };
+        }
+        if (/^mailto:/i.test(url)) {
+          return { event: 'social_click_email', params: { platform: 'Email' } };
         }
         return null;
       }

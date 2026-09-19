@@ -2,44 +2,41 @@
    1. COLOR SYSTEM (System-Level Auto Switch)
    ========================================================================== */
 :root {
-  /* Default Light Mode Palette */
-  --page-bg: #eef1f5;
-  --bg-color: #ffffff;
-  --text-main: #1a1a1a;
-  --text-muted: #595959;
-  --accent-color: #0066cc;
-  --accent-color-2: #7c3aed;
-  --border-color: #e1e4e8;
-  --code-bg: #f6f8fa;
-  --shadow: 0 1px 2px rgba(20, 24, 30, 0.04), 0 12px 28px rgba(20, 24, 30, 0.07);
+  /* Light mode palette */
+  --page-bg: #f6f6f3;
+  --surface: #ffffff;
+  --ink: #14181f;
+  --ink-dim: #5c6270;
+  --accent: #2f5fff;
+  --accent-ink: #1c3aa6;
+  --line: #e3e3de;
+  --tag-bg: #eef1f7;
+  --code-bg: #f2f3f6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Automatic Dark Mode Palette Overrides */
-    --page-bg: #010409;
-    --bg-color: #0d1117;
-    --text-main: #c9d1d9;
-    --text-muted: #8b949e;
-    --accent-color: #58a6ff;
-    --accent-color-2: #a371f7;
-    --border-color: #30363d;
-    --code-bg: #161b22;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 28px rgba(0, 0, 0, 0.35);
+    --page-bg: #0d0f13;
+    --surface: #15181e;
+    --ink: #e7e9ee;
+    --ink-dim: #9aa0ad;
+    --accent: #7c96ff;
+    --accent-ink: #c2cdff;
+    --line: #272b34;
+    --tag-bg: #1b1f27;
+    --code-bg: #181b22;
   }
 }
 
 /* ==========================================================================
    2. GLOBAL LAYOUT & TYPOGRAPHY
    ========================================================================== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   background-color: var(--page-bg);
-  color: var(--text-main);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -47,98 +44,66 @@ body {
 }
 
 .portfolio-container {
-  max-width: 760px;
-  margin: 2.5rem auto;
-  padding: 3rem 3.25rem;
-  background-color: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
 }
 
-@media (max-width: 620px) {
-  .portfolio-container {
-    margin: 0;
-    padding: 2rem 1.25rem;
-    border-radius: 0;
-    border-width: 0 0 1px 0;
-    box-shadow: none;
-    min-height: 100vh;
-  }
+@media (max-width: 640px) {
+  .portfolio-container { padding: 2.75rem 1.25rem 3.5rem; }
 }
 
 /* ==========================================================================
-   3. MARKDOWN ELEMENT STYLING
+   3. TYPOGRAPHY & MARKDOWN ELEMENTS
    ========================================================================== */
-h1, h2, h3 {
-  font-weight: 700;
-  line-height: 1.25;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+.eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.9rem;
 }
 
 h1 {
-  font-size: 2.25rem;
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-top: 0;
-  background: linear-gradient(90deg, var(--accent-color), var(--accent-color-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.25rem, 6vw, 3.4rem);
+  line-height: 1.04;
+  text-wrap: balance;
+  margin: 0 0 0.9rem;
 }
 
-h2 { font-size: 1.5rem; }
-
-h3 {
-  font-size: 1.15rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  border-left: 3px solid var(--accent-color);
-  padding-left: 0.6rem;
-}
-
-/* Role line directly under the name */
 h1 + p {
   font-size: 1.05rem;
-  color: var(--text-muted);
-  margin-top: 0.5rem;
+  line-height: 1.65;
+  max-width: 62ch;
+  color: #31353f;
+  margin: 0 0 1.75rem;
 }
 
-/* Bio paragraph */
-h1 + p + p {
-  font-size: 1.05rem;
-  max-width: 60ch;
+@media (prefers-color-scheme: dark) {
+  h1 + p { color: #c4c8d2; }
 }
 
-p, ul, ol {
-  margin-top: 0;
-  margin-bottom: 1rem;
+h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-li {
-  margin-bottom: 0.4rem;
-  padding-left: 0.2rem;
-}
+h3 { font-size: 1.3rem; margin: 0 0 1.25rem; }
 
-li::marker {
-  color: var(--accent-color);
-}
+p, ul, ol { margin-top: 0; margin-bottom: 1rem; }
 
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
+li { margin-bottom: 0.4rem; padding-left: 0.2rem; }
+li::marker { color: var(--accent); }
 
-a:hover {
-  text-decoration: underline;
-}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a:focus-visible,
-.resume-button:focus-visible {
-  outline: 2px solid var(--accent-color);
+a:focus-visible, .resume-button:focus-visible, .btn-secondary:focus-visible {
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -146,128 +111,147 @@ a:focus-visible,
 hr {
   height: 1px;
   padding: 0;
-  margin: 2.5rem 0;
-  background-color: var(--border-color);
+  margin: 3rem 0;
+  background-color: var(--line);
   border: 0;
 }
 
-/* Badge / shield images (skills, connect) */
-p img {
-  margin: 0.2rem 0.3rem 0.2rem 0;
-  vertical-align: middle;
-}
+/* Skill / connect badge images */
+p img { margin: 0.2rem 0.35rem 0.2rem 0; vertical-align: middle; }
 
-/* Profile view-counter pixel at the very bottom */
-p:last-child img[src*="komarev"] {
-  display: block;
-  margin: 1rem auto 0;
-  opacity: 0.55;
-}
-p:has(> img[src*="komarev"]:only-child) {
-  text-align: center;
-}
-
-/* Code and Code Blocks */
-code {
-  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-  font-size: 85%;
-  background-color: var(--code-bg);
-  padding: 0.2rem 0.4rem;
-  border-radius: 6px;
-}
-
-pre {
-  background-color: var(--code-bg);
-  padding: 1rem;
-  overflow: auto;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-}
-
-pre code {
-  background-color: transparent;
-  padding: 0;
-  font-size: 90%;
-}
+p:last-child img[src*="komarev"] { display: block; margin: 1.5rem auto 0; opacity: 0.55; }
 
 /* ==========================================================================
-   4. PROJECTS TABLE
+   4. HERO — CTA ROW + STAT TILES
    ========================================================================== */
-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin-bottom: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  overflow: hidden;
+.cta-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0 0 2.5rem;
 }
 
-@media (max-width: 620px) {
-  table {
-    display: block;
-    width: auto;
-    min-width: 560px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-th, td {
-  padding: 0.75rem 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color);
-  vertical-align: top;
-}
-
-th {
-  background-color: var(--code-bg);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--text-muted);
-}
-
-tr:last-child td {
-  border-bottom: none;
-}
-
-tbody tr {
-  transition: background-color 0.15s ease;
-}
-
-tbody tr:hover {
-  background-color: var(--code-bg);
-}
-
-td:first-child {
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* ==========================================================================
-   5. CALL TO ACTION
-   ========================================================================== */
 .resume-button {
   display: inline-block;
-  padding: 0.65rem 1.3rem;
-  margin-top: 0.5rem;
+  padding: 0.75rem 1.4rem;
   border: none;
   border-radius: 8px;
   color: #ffffff;
-  background: linear-gradient(90deg, var(--accent-color), var(--accent-color-2));
+  background: var(--ink);
   font-size: 0.95rem;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(0, 102, 204, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: opacity 0.15s ease;
+}
+.resume-button:hover { opacity: 0.85; text-decoration: none; }
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 0 1rem;
+}
+.stat {
+  background: var(--surface);
+  padding: 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.stat .num {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.stat .label { font-size: 0.75rem; color: var(--ink-dim); line-height: 1.4; }
+
+@media (max-width: 640px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
 }
 
-.resume-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0, 102, 204, 0.35);
-  text-decoration: none;
+/* ==========================================================================
+   5. PROJECT CARDS
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  margin: 0 0 1rem;
 }
 
-.resume-button:active {
-  transform: translateY(0);
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
+
+.project-card.featured {
+  grid-column: 1 / -1;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.card-eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.project-card h3 { font-size: 1.05rem; margin: 0; }
+.project-card > p { font-size: 0.9rem; line-height: 1.55; color: var(--ink-dim); margin: 0; }
+
+.tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tech-tags span {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  color: var(--ink-dim);
+  background: var(--tag-bg);
+  border: 1px solid var(--line);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+a.view-repo { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-top: 0.1rem; }
+
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: auto; }
+}
+
+/* ==========================================================================
+   6. CURRENTLY CALLOUT
+   ========================================================================== */
+h3 + ul {
+  list-style: none;
+  margin: 0;
+  padding: 1.35rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 10px 10px 0;
+}
+h3 + ul li { margin-bottom: 0.6rem; }
+h3 + ul li:last-child { margin-bottom: 0; }

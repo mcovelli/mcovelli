@@ -14,7 +14,7 @@ Computer Science **and** Business Management graduate with hands-on experience b
 <div class="stats">
 <div class="stat"><span class="num">9.4M</span><span class="label">crime records analyzed</span></div>
 <div class="stat"><span class="num">10K+</span><span class="label">retail transactions modeled</span></div>
-<div class="stat"><span class="num">5</span><span class="label">shipped data projects</span></div>
+<div class="stat"><span class="num">4</span><span class="label">shipped data projects</span></div>
 <div class="stat"><span class="num">11</span><span class="label">tools in active use</span></div>
 </div>
 
@@ -69,12 +69,6 @@ Computer Science **and** Business Management graduate with hands-on experience b
 <a class="view-repo" href="https://github.com/mcovelli/SuperStoreSalesAnalysis">View repo &rarr;</a>
 </div>
 
-<div class="project-card">
-<h3>Scanfiler</h3>
-<p>Automated document filing powered by local AI. No data ever leaves your machine.</p>
-<div class="tech-tags"><span>Python</span><span>Ollama</span><span>Tesseract</span><span>MCP Server</span><span>Pillow</span></div>
-<a class="view-repo" href="https://github.com/mcovelli/scanfiler">View repo &rarr;</a>
-</div>
 
 </div>
 
